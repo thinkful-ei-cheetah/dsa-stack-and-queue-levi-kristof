@@ -34,3 +34,21 @@ class Queue {
     return node.value
   }
 }
+
+function teller(queue){
+  let paperworkIsOk = Math.floor(Math.random() * 100)
+
+  if(paperworkIsOk > 25){
+    return queue.dequeue()
+  }
+  else{
+    let walkOfShame = queue.dequeue()
+    queue.enqueue(walkOfShame)
+    return 'nobody'
+  }
+}
+
+module.exports = {
+  Queue,
+  teller,
+}
