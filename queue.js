@@ -1,7 +1,9 @@
+'use strict';
+
 class _Node {
   constructor(value){
     this.value = value,
-    this.next = null
+    this.next = null;
   }
 }
 
@@ -11,26 +13,28 @@ class Queue {
     this.last = null;
   }
   enqueue(data){
-    const node = new _Node(data)
+    const node = new _Node(data);
 
     if(this.first === null){
-      this.first = node
+      this.first = node;
     }
 
     if(this.last){
-      this.last.next = node
+      this.last.next = node;
     }
-    this.last = node
+    this.last = node;
   }
   dequeue(){
     if(this.first === null){
-      return
+      return;
     }
-    const node = this.first
-    this.first = this.first.next
+    const node = this.first;
+    this.first = this.first.next;
     if(node === this.last){
-      this.last = null
+      this.last = null;
     }
-    return node.value
+    return node.value;
   }
 }
+
+module.exports = Queue;
